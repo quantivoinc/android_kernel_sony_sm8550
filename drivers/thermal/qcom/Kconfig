@@ -122,6 +122,13 @@ config MAX31760_FAN_CONTROLLER
 	  different fan speed. Also, this driver initializes the power for
 	  the fan controller.
 
+config USBHID_FAN
+	tristate "USB HID fan cooling device"
+	depends on THERMAL && HID
+	help
+	  Cooling device that sends a PWM level (0-255) to a USB HID
+	  accessory. Output report 3 carries that byte.
+
 config QTI_THERMAL_LIMITS_DCVS
 	tristate "QTI LMH DCVS Driver"
 	depends on THERMAL && CPU_THERMAL
